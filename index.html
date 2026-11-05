@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mann Thakkar | Cybersecurity Researcher & Developer</title>
+<meta name="description" content="Mann Thakkar is a cybersecurity student, researcher and developer at National Forensic Sciences University, exploring application security, digital forensics, AI in cybersecurity and security engineering.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono&family=Space+Grotesk:wght@500;700&display=swap">
+<style>
+:root{--bg:#050807;--bg2:#0A100E;--card:#101A16;--el:#14221B;--a:#39FF88;--a2:#00C978;--hi:#8BFFC0;--t:#F5F7F5;--t2:#A3B0A8;--t3:#64736A;--bd:rgba(57,255,136,.15);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--t);font:16px/1.65 Inter,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:'Space Grotesk',system-ui,sans-serif;line-height:1.1;margin:0 0 .5em}
+.m{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;color:var(--a)}
+a{color:inherit;text-decoration:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;gap:22px;align-items:center;padding:14px 5vw;background:rgba(5,8,7,.8);backdrop-filter:blur(10px);border-bottom:1px solid var(--bd)}
+nav b{font-family:'Space Grotesk';border:1px solid var(--a);color:var(--a);padding:2px 8px;border-radius:6px}
+nav .l{display:flex;gap:18px;margin-left:auto;font-size:13px;color:var(--t2);overflow-x:auto}
+nav .l a:hover{color:var(--a)}
+section{padding:90px 5vw;max-width:1200px;margin:auto}
+#home{min-height:100vh;display:grid;grid-template-columns:1.1fr 1fr;gap:20px;align-items:center;padding-top:110px;max-width:1300px}
+h1{font-size:clamp(48px,9vw,104px);font-weight:700}
+h1 span{color:var(--a)}
+.sub{font-size:clamp(20px,2.6vw,28px);color:var(--t2);font-family:'Space Grotesk'}
+.btn{display:inline-block;padding:11px 20px;border-radius:8px;border:1px solid var(--bd);margin:6px 8px 0 0;font-size:14px;transition:.2s}
+.btn.p{background:var(--a);color:#021;font-weight:600}.btn:hover{box-shadow:0 0 18px rgba(57,255,136,.3);border-color:var(--a)}
+#g{width:100%;height:min(70vh,520px);cursor:grab}
+.term{margin-top:20px;color:var(--t3);min-height:70px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:22px;transition:transform .15s,border-color .2s;transform-style:preserve-3d}
+.card:hover{border-color:var(--a)}
+.tag{display:inline-block;font:11px 'JetBrains Mono';color:var(--hi);border:1px solid var(--bd);padding:2px 8px;border-radius:99px;margin:3px 4px 0 0}
+.badge{font:11px 'JetBrains Mono';color:#021;background:var(--a);padding:2px 8px;border-radius:4px}
+h2{font-size:clamp(30px,5vw,48px)}
+.s{color:var(--t2);max-width:700px;margin-bottom:34px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.tabs button{background:none;color:var(--t2);border:1px solid var(--bd);border-radius:8px;padding:8px 14px;cursor:pointer;font:inherit;font-size:13px}
+.tabs button.on{border-color:var(--a);color:var(--a)}
+.ph{border:1px dashed var(--t3);color:var(--t3);border-radius:10px;padding:14px;font-size:13px}
+.tl{border-left:1px solid var(--bd);padding-left:22px}.tl .card{margin-bottom:14px}
+form{display:grid;gap:12px;max-width:560px}
+input,textarea{background:var(--bg2);border:1px solid var(--bd);color:var(--t);padding:12px;border-radius:8px;font:inherit}
+input:focus,textarea:focus,a:focus-visible,button:focus-visible{outline:2px solid var(--a)}
+footer{border-top:1px solid var(--bd);padding:40px 5vw;text-align:center;color:var(--t3)}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--a);margin-right:6px}
+.rv{opacity:0;transform:translateY(24px);transition:.7s}.rv.in{opacity:1;transform:none}
+@media(max-width:800px){#home{grid-template-columns:1fr}nav .l{font-size:12px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
+
+/* Certificate viewer additions — existing portfolio design retained */
+#certModal{display:none;position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.88);backdrop-filter:blur(10px);padding:24px;align-items:center;justify-content:center}
+#certModal.open{display:flex}
+#certModal .viewer{width:min(100%,1000px);height:min(90vh,850px);background:var(--card);border:1px solid var(--bd);border-radius:14px;display:flex;flex-direction:column;overflow:hidden}
+#certModal .viewerHead{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;border-bottom:1px solid var(--bd)}
+#certModal .viewerHead h3{font-size:17px;margin:0}
+#certModal iframe{width:100%;height:100%;border:0;background:#fff}
+#certModal .viewerActions{display:flex;gap:8px;flex-wrap:wrap}
+.certActions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.certActions .btn{margin:0}
+@media(max-width:600px){#certModal{padding:10px}#certModal .viewer{height:94vh}#certModal .viewerHead{align-items:flex-start;flex-direction:column}}
+</style></head><body>
+<nav><b>MT</b><div class="l"><a href="#home">Home</a><a href="#about">About</a><a href="#skills">Expertise</a><a href="#projects">Projects</a><a href="#research">Research</a><a href="#ach">Achievements</a><a href="#certs">Certifications</a><a href="#lead">Leadership</a><a href="#contact">Contact</a></div></nav>
+
+<section id="home">
+<div><p class="m">CYBERSECURITY RESEARCHER & DEVELOPER</p>
+<h1>MANN<br><span>THAKKAR</span></h1>
+<p class="sub">Building Secure Systems.<br>Exploring Intelligent Defence.</p>
+<p style="color:var(--t2);max-width:520px">I explore the intersection of cybersecurity, artificial intelligence and digital forensics to understand emerging threats and develop practical security solutions.</p>
+<a class="btn p" href="#projects">Explore My Work</a><a class="btn" href="#research">View My Research</a><a class="btn" href="resume/Mann_Thakkar_CV_Final.pdf" download>Download My CV</a>
+<div class="term m" id="term" aria-hidden="true"></div>
+<p><a class="btn" href="https://github.com/Mann461" target="_blank" rel="noopener noreferrer">GitHub</a><a class="btn" href="https://www.linkedin.com/in/mann-thakkar-06a8a4380/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p></div>
+<div><canvas id="g" aria-label="Interactive 3D network globe"></canvas></div>
+</section>
+
+<section id="about" class="rv"><h2>Beyond Code. Beyond Security. Driven by Curiosity.</h2>
+<p class="s">I am pursuing an integrated B.Tech–M.Tech in Computer Science and Engineering (Cyber Security) at the National Forensic Sciences University. My interests lie in application security, network security, digital forensics and security engineering. I work on cybersecurity projects, explore mathematical approaches to password security, and take part in technical competitions. My goal is to build strong foundations and contribute to meaningful security research and engineering.</p>
+<div class="grid">
+<div class="card"><h3>What I Explore</h3>Application Security · Network Security · Digital Forensics · AI in Cybersecurity · Password Security Research</div>
+<div class="card"><h3>What I Build</h3>Security utilities · Forensic analysis tools · AI-driven security concepts · Web-based technical applications</div>
+<div class="card"><h3>What I Aim For</h3>Information security internships · Research collaborations · Practical security engineering · Continuous development</div>
+<div class="card"><h3>Education</h3>NFSU, Integrated B.Tech + M.Tech CSE (Cyber Security)<br><span class="m">AUG 2025 – JUN 2030</span><br>SPI: Sem 1 – 7.43/10 · Sem 2 – 8.16/10</div>
+</div>
+<p class="ph" style="margin-top:18px">Optional portrait: add your own professional photograph as images/portrait.jpg when ready.</p></section>
+
+<section id="skills" class="rv"><h2>Technical Arsenal</h2><p class="s">Technologies, tools and concepts I actively explore — areas of learning, not rated levels.</p>
+<div class="tabs" id="stabs"></div><div class="grid" id="sgrid"></div></section>
+
+<section id="projects" class="rv"><h2>Engineering Ideas Into Working Solutions.</h2><p class="s">A collection of cybersecurity, AI and software development projects.</p>
+<div class="grid" id="pgrid"></div>
+<p class="ph" style="margin-top:16px">Screenshots and detailed project views: add real screenshots per project. Agis Nexus is listed under SPAISS since both share one repository.</p></section>
+
+<section id="research" class="rv"><h2>Research. Analysis. Discovery.</h2><p class="s">Exploring security challenges through mathematical modelling, experimentation and applied research.</p>
+<div class="grid">
+<div class="card"><span class="badge">PRESENTED</span><h3 style="margin-top:10px">An Adaptive Entropy-Based Mathematical Model for Evaluating Password Security Against AI-Attacks</h3><p class="m">NCRTTM 2026 · 27 JULY 2026</p><p style="color:var(--t2)">National Conference on Recent Trends and Technology in Mathematics, M. G. Science Institute, Ahmedabad. Mathematical modelling of entropy-based password strength in the context of AI-assisted attacks.</p></div>
+<div class="card"><span class="badge">PRESENTED</span><h3 style="margin-top:10px">Generative AI in Cybersecurity Education: Applications, Challenges and Future Directions</h3><p class="m">IITE GANDHINAGAR · VIKAS SAPTAH 2026</p><p style="color:var(--t2)">“The STEM Equation” national conference. Co-author: Mahek Panchal. Supervisor: Dr. Akash Thakkar.</p></div>
+<div class="card"><span class="badge" style="background:var(--t3)">ONGOING INTERESTS</span><h3 style="margin-top:10px">Not completed research</h3><p style="color:var(--t2)">Password security & entropy modelling · AI-assisted threat detection · Privacy-preserving ML · Application security · Digital forensics</p></div>
+</div><p class="ph" style="margin-top:16px">Abstracts, PDFs and conference photos: add files when available. No DOI or journal indexing is claimed.</p></section>
+
+<section id="ach" class="rv"><h2>Milestones Along the Journey.</h2><p class="s">Each item is labelled by its actual type.</p><div class="tl" id="tl"></div></section>
+
+<section id="certs" class="rv"><h2>Continuous Learning. Verified Credentials.</h2><p class="s">Records of learning and participation. The five ISC2 items are completed learning domains, not the full CC certification. IEEE is a membership, not an exam.</p>
+<div class="tabs" id="ctabs"></div><div class="grid" id="cgrid"></div>
+<p class="ph" style="margin-top:16px">Original supplied certificate files are included in this portfolio package. Select View Certificate to preview each PDF.</p></section>
+
+<section id="lead" class="rv"><h2>Beyond Individual Projects.</h2>
+<div class="grid">
+<div class="card"><h3>Team Cyber Warriors</h3><span class="badge">TEAM LEADER</span><p style="color:var(--t2)">KANAD S.H.I.E.L.D. 2026 · SPAISS. Problem conceptualisation, system architecture, technical development, team coordination, final presentation.</p></div>
+<div class="card"><h3>NSIT-Samvad Newsletter</h3><span class="badge">STUDENT TEAM MEMBER</span><p style="color:var(--t2)">Contributed to the team behind the institute's first-edition newsletter.</p></div>
+<div class="card"><h3>AI Sentinel</h3><span class="badge">VOLUNTEER</span><p style="color:var(--t2)">GUJCOST-sponsored STTP on cyber security & digital investigation.</p></div>
+<div class="card"><h3>Professional Communities</h3><span class="badge">MEMBER</span><p style="color:var(--t2)">IEEE Computer Society, Graduate Student Member 2026, IEEE Gujarat Section.</p></div>
+</div></section>
+
+<section class="rv"><div class="card" style="text-align:center;padding:48px 24px"><h2>Open to Learning. Ready to Contribute.</h2><p class="s" style="margin:0 auto 20px">Interested in information security internships, application security, VAPT, SOC, digital forensics, cybersecurity research and AI in cybersecurity.</p><a class="btn p" href="resume/Mann_Thakkar_CV_Final.pdf" download>Download My Resume</a><a class="btn" href="#contact">Contact Me</a></div></section>
+
+<section id="contact" class="rv"><h2>Let's Build a More Secure Digital Future.</h2><p class="s">Have a cybersecurity project, research opportunity, technical challenge or internship? I would be glad to connect.</p>
+<p><a class="btn" href="mailto:mann.25434014@nsitifscs.ac.in">mann.25434014@nsitifscs.ac.in</a><a class="btn" href="https://www.linkedin.com/in/mann-thakkar-06a8a4380/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a class="btn" href="https://github.com/Mann461" target="_blank" rel="noopener noreferrer">GitHub</a></p>
+<p class="m">AHMEDABAD, GUJARAT, INDIA</p>
+<form id="f"><input id="n" placeholder="Name" required maxlength="80"><input id="e" type="email" placeholder="Email" required maxlength="120"><input id="sj" placeholder="Subject" required maxlength="120"><textarea id="ms" rows="5" placeholder="Message" required maxlength="2000"></textarea><button class="btn p" type="submit">Send Message</button><small style="color:var(--t3)">Opens your email app with the message prefilled. A server-side form backend is not connected yet.</small></form></section>
+
+
+<div id="certModal" role="dialog" aria-modal="true" aria-labelledby="certModalTitle">
+  <div class="viewer">
+    <div class="viewerHead">
+      <h3 id="certModalTitle">Certificate</h3>
+      <div class="viewerActions">
+        <a id="certOpen" class="btn" target="_blank" rel="noopener noreferrer">Open PDF</a>
+        <a id="certDownload" class="btn p" download>Download</a>
+        <button id="certClose" class="btn" type="button" aria-label="Close certificate viewer">Close ✕</button>
+      </div>
+    </div>
+    <iframe id="certFrame" title="Certificate PDF preview"></iframe>
+    <img id="certImg" style="display:none;width:100%;height:100%;object-fit:contain;background:#050807;padding:16px" alt="Certificate preview">
+  </div>
+</div>
+
+<footer><h3>MANN THAKKAR</h3><p>Cybersecurity Researcher & Developer · Building. Researching. Securing.</p><p><a href="#home">Home</a> · <a href="#projects">Projects</a> · <a href="#research">Research</a> · <a href="#certs">Certifications</a></p><p class="m"><span class="dot"></span>PORTFOLIO ONLINE · © <span id="y"></span></p></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+const $=s=>document.querySelector(s);
+const SK={Programming:["Python","C","C++","SQL","PL/SQL"],Cybersecurity:["Application Security","Network Security","VAPT","Cyber Defence","Threat Analysis","SOC Fundamentals","Incident Response","Threat Intelligence","EDR","Digital Forensics","Password Security"],Tools:["Nmap","Wireshark","tcpdump","Cisco Packet Tracer","Ubuntu Linux","Git","GitHub"],Research:["Password Entropy Analysis","Mathematical Modelling","Security Research","Academic Writing","AI in Cybersecurity"],Development:["HTML","CSS","JavaScript","React","GitHub-based Development"]};
+const P=[
+["Forensic Metadata Carver","Digital Forensics / Python","Extracts and analyses metadata from digital evidence.",["Python","Digital Forensics"],"https://github.com/Mann461/forensic-metadata-carver",null,"Featured"],
+["SPAISS (Agis Nexus)","AI / Computer Vision / Security Systems","Concept: solar-powered Edge-AI surveillance for off-grid areas, alert-first and video-second to cut bandwidth. KANAD S.H.I.E.L.D. 2026 finalist; Team Cyber Warriors, leader.",["Edge AI","Face detection","Concept"],"https://github.com/Mann461/AgisNexus","https://agisnexusbymann.onrender.com/","Finalist"],
+["SentinelGrid","AI / GIS / Security Intelligence","AI-powered surveillance intelligence and GIS platform concept.",["AI","GIS","Web"],null,"https://sentinel-grid-steel.vercel.app/","Concept"],
+["SmartAttend","Web Development / Automation","Timetable-driven attendance: projected QR codes, cryptographic tokens, WebSockets, automated Excel reports.",["QR","WebSockets","Excel"],null,"https://nsit-attendance.netlify.app/","Live"],
+["GSTR-1 vs e-Invoice Reconciliation","Web Dev / Compliance Tech","Upload and compare GSTR-1 data with e-Invoice records and review discrepancies.",["Web","Reconciliation"],null,"https://gstr1-vs-einvoice.onrender.com/","Live"]];
+const A=[["KANAD S.H.I.E.L.D. 2026","FINALIST","SPAISS, as Team Cyber Warriors leader."],["NCRTTM 2026","PRESENTATION","Adaptive entropy password-security research."],["IITE National Conference 2026","PRESENTATION","Generative AI in cybersecurity education."],["HEX HUNT 2025","PARTICIPATION","Cybersecurity workshop and CTF with Lok Jagruti Kendra University."],["HACKOUT'26","PARTICIPATION","Cybersecurity competition, DA-IICT."],["IEEE Computer Society 2026","MEMBERSHIP","Graduate Student Member, valid through 31 Dec 2026."],["AI Sentinel STTP","VOLUNTEERING","GUJCOST-sponsored technical workshop."],["Cyber Samwad 2026 · Cyber Safety Pledge 2026 · Viksit Bharat Young Leaders Dialogue 2026","PARTICIPATION","Events and quiz participation."]];
+const CERTIFICATES=[{"title": "ISC2 Certified in Cybersecurity — Domain 1: Security Principles", "category": "Cybersecurity", "kind": "Learning domain", "file": "certificates/01-isc2-certified-in-cybersecurity-domain-1-security-principles.pdf"}, {"title": "ISC2 Certified in Cybersecurity — Domain 2: Incident Response, Business Continuity and Disaster Recovery", "category": "Cybersecurity", "kind": "Learning domain", "file": "certificates/02-isc2-certified-in-cybersecurity-domain-2-incident-response-business-continuity-and-disaster-recovery.pdf"}, {"title": "ISC2 Certified in Cybersecurity — Domain 3: Access Control Concepts", "category": "Cybersecurity", "kind": "Learning domain", "file": "certificates/03-isc2-certified-in-cybersecurity-domain-3-access-control-concepts.pdf"}, {"title": "ISC2 Certified in Cybersecurity — Domain 4: Network Security", "category": "Cybersecurity", "kind": "Learning domain", "file": "certificates/04-isc2-certified-in-cybersecurity-domain-4-network-security.pdf"}, {"title": "ISC2 Certified in Cybersecurity — Domain 5: Security Operations", "category": "Cybersecurity", "kind": "Learning domain", "file": "certificates/05-isc2-certified-in-cybersecurity-domain-5-security-operations.pdf"}, {"title": "Deloitte Cyber Job Simulation — Forage", "category": "Cybersecurity", "kind": "Job simulation", "file": "certificates/06-deloitte-cyber-job-simulation-forage.pdf"}, {"title": "Mastercard Cybersecurity Virtual Experience — Forage", "category": "Cybersecurity", "kind": "Job simulation", "file": "certificates/07-mastercard-cybersecurity-virtual-experience-forage.pdf"}, {"title": "Cyber Safety Pledge 2026 — Ministry of Home Affairs", "category": "Cybersecurity", "kind": "Pledge", "file": "certificates/08-cyber-safety-pledge-2026-ministry-of-home-affairs.jpeg"}, {"title": "Adani Cyber Samvad", "category": "Cybersecurity", "kind": "Participation", "file": "certificates/09-adani-cyber-samvad.pdf"}, {"title": "Hex Hunt 2025 — Cybersecurity Workshop and CTF", "category": "Competitions", "kind": "Participation", "file": "certificates/10-hex-hunt-2025-cybersecurity-workshop-and-ctf.pdf"}, {"title": "HackOut'26 — DA-IICT", "category": "Competitions", "kind": "Participation", "file": "certificates/11-hackout-26-da-iict.pdf"}, {"title": "NVIDIA — Getting Started with AI on Jetson Nano", "category": "AI & Technology", "kind": "Certificate of Competency", "file": "certificates/12-nvidia-getting-started-with-ai-on-jetson-nano.pdf"}, {"title": "GUVI × HCL — Generative AI Industry Connect Session", "category": "AI & Technology", "kind": "Participation", "file": "certificates/13-guvi-hcl-generative-ai-industry-connect-session.pdf"}, {"title": "Cisco Networking Academy — Getting Started with Cisco Packet Tracer", "category": "AI & Technology", "kind": "Course certificate", "file": "certificates/14-cisco-networking-academy-getting-started-with-cisco-packet-tracer.pdf"}, {"title": "National Intellectual Property Awareness Mission", "category": "AI & Technology", "kind": "Participation", "file": "certificates/15-national-intellectual-property-awareness-mission.pdf"}, {"title": "IEEE Computer Society — 2026 Certificate of Membership", "category": "Professional Memberships", "kind": "Graduate Student Member", "file": "certificates/16-ieee-computer-society-2026-certificate-of-membership.pdf"}, {"title": "IEEE — 2026 Graduate Student Membership Certificate", "category": "Professional Memberships", "kind": "Graduate Student Member", "file": "certificates/17-ieee-2026-graduate-student-membership-certificate.pdf"}, {"title": "IEEE Gujarat Section — Digital Membership Card 2026", "category": "Professional Memberships", "kind": "Membership card", "file": "certificates/18-ieee-gujarat-section-digital-membership-card-2026.pdf"}, {"title": "NCRTTM 2026 — Adaptive Entropy Research Presentation", "category": "Research & Conferences", "kind": "Paper presentation", "file": "certificates/19-ncrttm-2026-adaptive-entropy-research-presentation.pdf"}, {"title": "IITE — The STEM Equation National Conference", "category": "Research & Conferences", "kind": "Paper presentation", "file": "certificates/20-iite-the-stem-equation-national-conference.pdf"}, {"title": "AI Sentinel — Pioneering Cyber Security & Digital Investigation STTP", "category": "Workshops & Volunteering", "kind": "Workshop", "file": "certificates/21-ai-sentinel-pioneering-cyber-security-digital-investigation-sttp.pdf"}, {"title": "AI Sentinel — Volunteer Certificate", "category": "Workshops & Volunteering", "kind": "Volunteering", "file": "certificates/22-ai-sentinel-volunteer-certificate.pdf"}, {"title": "Gene to Pattern — Molecular Biology Techniques for Forensic DNA Profiling", "category": "Workshops & Volunteering", "kind": "Workshop", "file": "certificates/23-gene-to-pattern-molecular-biology-techniques-for-forensic-dna-profiling.pdf"}, {"title": "Viksit Bharat Young Leaders Dialogue — Quiz Participation", "category": "Competitions", "kind": "Participation", "file": "certificates/24-viksit-bharat-young-leaders-dialogue-quiz-participation.pdf"}, {"title": "IFCSAW 2026 — Certificate of Participation", "category": "Research & Conferences", "kind": "Participation", "file": "certificates/25-ifcsaw-2026-certificate-of-participation.pdf"}];
+function tabs(el,keys,fn){el.innerHTML="";keys.forEach((k,i)=>{const b=document.createElement("button");b.textContent=k;b.onclick=()=>{[...el.children].forEach(c=>c.classList.remove("on"));b.classList.add("on");fn(k)};el.appendChild(b);if(!i)b.click()})}
+tabs($("#stabs"),Object.keys(SK),k=>{$("#sgrid").innerHTML=SK[k].map(s=>`<div class="card" style="padding:14px">${s}</div>`).join("")});
+
+const certModal=$("#certModal"),certFrame=$("#certFrame"),certImg=$("#certImg"),certTitle=$("#certModalTitle");
+function openCertificate(c){
+  certTitle.textContent=c.title;
+  const isImg=/\.(jpe?g|png|webp)$/i.test(c.file);
+  if(isImg){
+    certFrame.style.display="none";
+    certFrame.src="about:blank";
+    certImg.src=c.file;
+    certImg.style.display="block";
+    $("#certOpen").textContent="Open Image";
+  }else{
+    certImg.style.display="none";
+    certImg.src="";
+    certFrame.src=c.file;
+    certFrame.style.display="block";
+    $("#certOpen").textContent="Open PDF";
+  }
+  $("#certOpen").href=c.file;
+  $("#certDownload").href=c.file;
+  $("#certModal").classList.add("open");
+  document.body.style.overflow="hidden";
+}
+function closeCertificate(){
+  $("#certModal").classList.remove("open");
+  certFrame.src="about:blank";
+  if(certImg)certImg.src="";
+  document.body.style.overflow="";
+}
+$("#certClose").addEventListener("click",closeCertificate);
+$("#certModal").addEventListener("click",e=>{if(e.target===$("#certModal"))closeCertificate()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeCertificate()});
+const certCategories=["All",...new Set(CERTIFICATES.map(c=>c.category))];
+function renderCertificates(category){
+  const visible=category==="All"?CERTIFICATES:CERTIFICATES.filter(c=>c.category===category);
+  $("#cgrid").innerHTML=visible.map(c=>{
+    const isImg=/\.(jpe?g|png|webp)$/i.test(c.file);
+    return `<div class="card"><span class="tag">${c.category}</span><h3 style="font-size:17px;margin-top:10px">${c.title}</h3><p style="color:var(--t3);font:11px 'JetBrains Mono'">${c.kind}</p><div class="certActions"><button class="btn p" type="button" data-cert="${CERTIFICATES.indexOf(c)}">View Certificate</button><a class="btn" href="${c.file}" download>${isImg?'Download Image':'Download PDF'}</a></div></div>`;
+  }).join("");
+  $("#cgrid").querySelectorAll("[data-cert]").forEach(b=>b.addEventListener("click",()=>openCertificate(CERTIFICATES[Number(b.dataset.cert)])));
+}
+tabs($("#ctabs"),certCategories,renderCertificates);
+
+$("#pgrid").innerHTML=P.map(p=>`<div class="card tilt"><span class="badge">${p[6]}</span><p class="m" style="margin:10px 0 4px">${p[1]}</p><h3>${p[0]}</h3><p style="color:var(--t2)">${p[2]}</p>${p[3].map(t=>`<span class="tag">${t}</span>`).join("")}<p style="margin-top:14px">${p[4]?`<a class="btn" target="_blank" rel="noopener noreferrer" href="${p[4]}">GitHub</a>`:""}${p[5]?`<a class="btn p" target="_blank" rel="noopener noreferrer" href="${p[5]}">Live Demo</a>`:""}</p></div>`).join("");
+$("#tl").innerHTML=A.map(a=>`<div class="card"><span class="badge">${a[1]}</span><h3 style="margin-top:8px;font-size:18px">${a[0]}</h3><span style="color:var(--t2)">${a[2]}</span></div>`).join("");
+document.querySelectorAll(".tilt").forEach(c=>{c.onmousemove=e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;c.style.transform=`perspective(700px) rotateY(${x*8}deg) rotateX(${-y*8}deg)`};c.onmouseleave=()=>c.style.transform=""});
+$("#f").onsubmit=e=>{e.preventDefault();location.href=`mailto:mann.25434014@nsitifscs.ac.in?subject=${encodeURIComponent($("#sj").value)}&body=${encodeURIComponent($("#ms").value+"\n\n— "+$("#n").value+" ("+$("#e").value+")")}`};
+$("#y").textContent=new Date().getFullYear();
+const io=new IntersectionObserver(es=>es.forEach(x=>x.isIntersecting&&x.target.classList.add("in")),{threshold:.08});document.querySelectorAll(".rv").forEach(s=>io.observe(s));
+const L=["[INITIALIZING SECURITY INTERFACE]","[LOADING RESEARCH MODULES]","[CONNECTING PROJECT ARCHIVE]","[SYSTEM STATUS: ONLINE]"];let li=0;const T=$("#term");(function n(){if(li<L.length){T.innerHTML+=L[li++]+"<br>";setTimeout(n,700)}})();
+try{const cv=$("#g"),mob=innerWidth<800,low=matchMedia("(prefers-reduced-motion:reduce)").matches;
+const R=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:!mob});const S=new THREE.Scene(),Cm=new THREE.PerspectiveCamera(45,1,.1,100);Cm.position.z=4.6;
+const G=new THREE.Group();S.add(G);
+G.add(new THREE.Mesh(new THREE.SphereGeometry(1.5,28,18),new THREE.MeshBasicMaterial({color:0x39ff88,wireframe:true,transparent:true,opacity:.12})));
+const N=mob?50:110,pts=[],pos=[];for(let i=0;i<N;i++){const v=new THREE.Vector3().randomDirection().multiplyScalar(1.5);pts.push(v);pos.push(v.x,v.y,v.z)}
+const pg=new THREE.BufferGeometry();pg.setAttribute("position",new THREE.Float32BufferAttribute(pos,3));
+const nodes=new THREE.Points(pg,new THREE.PointsMaterial({color:0x8bffc0,size:.045}));G.add(nodes);
+const lp=[];for(let i=0;i<N;i++)for(let j=i+1;j<N;j++)if(pts[i].distanceTo(pts[j])<.55)lp.push(pts[i].x,pts[i].y,pts[i].z,pts[j].x,pts[j].y,pts[j].z);
+const lg=new THREE.BufferGeometry();lg.setAttribute("position",new THREE.Float32BufferAttribute(lp,3));
+const lines=new THREE.LineSegments(lg,new THREE.LineBasicMaterial({color:0x39ff88,transparent:true,opacity:.35}));G.add(lines);
+const rings=[0,1].map(i=>{const r=new THREE.Mesh(new THREE.TorusGeometry(2+i*.35,.006,6,120),new THREE.MeshBasicMaterial({color:0x00c978}));r.rotation.x=1.2+i*.5;S.add(r);return r});
+let mx=0,my=0;addEventListener("mousemove",e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
+cv.onclick=()=>{lines.material.opacity=1;nodes.material.size=.09;setTimeout(()=>{lines.material.opacity=.35;nodes.material.size=.045},500)};
+function rs(){const w=cv.clientWidth,h=cv.clientHeight;R.setSize(w,h,false);Cm.aspect=w/h;Cm.updateProjectionMatrix();R.setPixelRatio(Math.min(devicePixelRatio,2))}rs();addEventListener("resize",rs);
+(function a(){requestAnimationFrame(a);if(!low)G.rotation.y+=.002;G.rotation.x+=((my*.5)-G.rotation.x)*.05;rings.forEach((r,i)=>r.rotation.z+=low?0:.003*(i+1));R.render(S,Cm)})()
+}catch(e){$("#g").style.display="none"}
+</script></body></html>
